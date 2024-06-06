@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+option csharp_namespace = "DictionaryGrpcService";
+
+package dictionary;
+
+service Dictionary {
+  rpc Add (AddRequest) returns (ResultResponse);
+  rpc Remove (RemoveRequest) returns (RemoveResponse);
+  rpc Get (GetRequest) returns (GetResponse);
+  rpc GetAll (GetAllRequest) returns (GetAllResponse);
+}
+
+message AddRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message ResultResponse {
+  bool success = 1;
+}
+
+message RemoveRequest {
+  string key = 1;
+}
+
+message RemoveResponse {
+  bool success = 1;
+  optional string value = 2;
+}
+
+message GetRequest {
+  string key = 1;
+}
+
+message GetResponse {
+  bool found = 1;
+  optional string value = 2;
+}
+
+message GetAllRequest {}
+
+message GetAllResponse {
+  map<string, string> data = 1;
+}
