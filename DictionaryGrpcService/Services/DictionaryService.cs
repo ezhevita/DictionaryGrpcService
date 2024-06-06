@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DictionaryGrpcService.Services;
 
-public class DictionaryService : Dictionary.DictionaryBase
+public class DictionaryService : DictionaryStorageService.DictionaryStorageServiceBase
 {
 	public const string StorageKey = "DictionaryStorage";
 	private readonly ConcurrentDictionary<string, string> _dictionary;

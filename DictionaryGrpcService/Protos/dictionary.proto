@@ -4,7 +4,7 @@ option csharp_namespace = "DictionaryGrpcService";
 
 package dictionary;
 
-service Dictionary {
+service DictionaryStorageService {
   rpc Add (AddRequest) returns (ResultResponse);
   rpc Remove (RemoveRequest) returns (RemoveResponse);
   rpc Get (GetRequest) returns (GetResponse);
